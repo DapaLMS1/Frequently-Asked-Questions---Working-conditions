@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Dental Assistant Award FAQ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <style>
+        /* Brand Colors: 532A8C (Deep Purple), 9D8ABB (Muted Purple), 7ABF49 (Green), F2F2F2 (Light Grey), C3ACE8 (Lilac) */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F2F2F2; /* Light Grey Background */
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 10px rgba(83, 42, 140, 0.1); /* Subtle shadow using Deep Purple */
+        }
+
+        .question-wrapper {
+            margin-bottom: 1.5rem;
+            background-color: #ffffff;
+            border: 1px solid #C3ACE8; /* Light Lilac border */
+            padding: 1rem;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: flex-start;
+            transition: all 0.2s ease;
+        }
+        
+        /* The main clickable icon that shows/hides the answer */
+        .question-icon-container {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            background-color: #532A8C; /* Deep Purple */
+            border-radius: 9999px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-right: 1rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            /* Using the question mark for the closed state */
+            content: '?';
+        }
+
+        .question-icon-container:hover {
+            background-color: #7ABF49; /* Green on hover */
+        }
+        
+        .question-icon-container.active {
+            content: '–';
+        }
+
+        .question-text-container {
+            flex-grow: 1;
+        }
+        
+        .answer-container {
+            /* Styles for the hidden answer area */
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            background-color: #F2F2F2; /* Light Grey for the answer box */
+            border-radius: 0.375rem;
+            margin-top: 0.5rem;
+            border: 1px solid #9D8ABB; /* Muted Purple border */
+        }
+
+        .answer-container.active {
+            max-height: 400px; /* Increased to accommodate the detailed answer */
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+        }
+
+        .question-text {
+            font-weight: 600;
+            color: #532A8C; /* Deep Purple */
+            font-size: 1.125rem;
+            line-height: 1.5rem;
+        }
+
+        .answer-text {
+            color: #333;
+            line-height: 1.5;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8">
+    <div class="container">
+        <h1 class="text-3xl font-bold text-center mb-6 text-[#532A8C]">Dental Assistant Award FAQ</h1>
+
+        <!-- Q1: Right to Refuse Overtime (Scenario-based) -->
+        <div class="question-wrapper flex-col">
+            <div class="flex items-start w-full">
+                <button class="question-icon-container text-xl" onclick="toggleQuestion(this)">?</button>
+                <div class="question-text-container cursor-pointer" onclick="toggleQuestion(this.previousElementSibling)">
+                    <p class="question-text">
+                        The Practice Manager has asked me to work overtime for the last three nights and I already have plans for the fourth night. Do I have to accept the shift?
+                    </p>
+                </div>
+            </div>
+            <div class="answer-container" role="region">
+                <p class="answer-text">
+                    <strong>No.</strong> Under the NES, you have the right to refuse <strong>unreasonable</strong> overtime. This request is likely unreasonable because:
+                    <ul class="list-disc pl-5 mt-2 space-y-1">
+                        <li><span class="font-semibold text-[#532A8C]">Health and Safety:</span> Working three consecutive overtime shifts creates a clear risk of fatigue and requires proper rest.</li>
+                        <li><span class="font-semibold text-[#532A8C]">Personal Commitments:</span> The law requires consideration for your personal life, including existing plans and family responsibilities.</li>
+                        <li><span class="font-semibold text-[#532A8C]">Rest Breach:</span> The HPSS Award generally requires a 10-hour rest period between shifts after working overtime.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- Q2: Professional Boundaries -->
+        <div class="question-wrapper flex-col">
+            <div class="flex items-start w-full">
+                <button class="question-icon-container text-xl" onclick="toggleQuestion(this)">?</button>
+                <div class="question-text-container cursor-pointer" onclick="toggleQuestion(this.previousElementSibling)">
+                    <p class="question-text">
+                        What do I do if a patient is flirting with me?
+                    </p>
+                </div>
+            </div>
+            <div class="answer-container" role="region">
+                <p class="answer-text">
+                    Always maintain <strong>professional boundaries.</strong> Politely but firmly redirect the conversation back to the dental treatment. If the behaviour continues, is inappropriate, or makes you feel uncomfortable, you must immediately report the incident to your <strong>Practice Manager or supervising dentist.</strong> Your workplace should have a clear policy on patient boundaries and harassment.
+                </p>
+            </div>
+        </div>
+
+        <!-- Q3 (NEW): Unpaid Overtime -->
+        <div class="question-wrapper flex-col">
+            <div class="flex items-start w-full">
+                <button class="question-icon-container text-xl" onclick="toggleQuestion(this)">?</button>
+                <div class="question-text-container cursor-pointer" onclick="toggleQuestion(this.previousElementSibling)">
+                    <p class="question-text">
+                        I noticed I wasn't paid overtime for one of my shifts. Should I say anything?
+                    </p>
+                </div>
+            </div>
+            <div class="answer-container" role="region">
+                <p class="answer-text">
+                    <strong>Yes, absolutely.</strong> Your minimum pay and entitlements, including overtime rates, are a legal guarantee under the HPSS Award. Wage underpayment is taken very seriously.
+                    <ol class="list-decimal pl-5 mt-2 space-y-1">
+                        <li><span class="font-semibold text-[#532A8C]">Document It:</span> Check your payslip against your shift records (start/finish times). Note the date, hours, and the amount you believe is missing.</li>
+                        <li><span class="font-semibold text-[#532A8C]">Inform Management First:</span> Approach your Practice Manager or payroll department politely, stating that you believe there was a genuine error in calculating your hours/rate for the specific shift.</li>
+                        <li><span class="font-semibold text-[#532A8C]">Follow Up:</span> If the issue is not resolved promptly, you can seek advice from the Fair Work Ombudsman to understand your full options for resolving the underpayment.</li>
+                    </ol>
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        /**
+         * Toggles the visibility of the answer for the given button.
+         * Also updates the button text to show '?' or '–'.
+         */
+        function toggleQuestion(button) {
+            // Find the parent wrapper and then the answer container
+            const wrapper = button.closest('.question-wrapper');
+            const answerContainer = wrapper.querySelector('.answer-container');
+            
+            // Toggle the 'active' class on both the button and the answer container
+            button.classList.toggle("active");
+            answerContainer.classList.toggle("active");
+
+            // Change the button text/icon
+            if (button.classList.contains("active")) {
+                button.textContent = '–'; // Use en dash when active (open)
+            } else {
+                button.textContent = '?'; // Use question mark when inactive (closed)
+            }
+
+            // Optional: Close all other open answers (Accordion style)
+            document.querySelectorAll('.question-icon-container').forEach(otherButton => {
+                if (otherButton !== button && otherButton.classList.contains('active')) {
+                    otherButton.classList.remove('active');
+                    otherButton.textContent = '?'; // Set back to '?'
+                    const otherWrapper = otherButton.closest('.question-wrapper');
+                    otherWrapper.querySelector('.answer-container').classList.remove('active');
+                }
+            });
+        }
+        
+        // Initialize button content on load
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.question-icon-container').forEach(button => {
+                button.textContent = '?';
+            });
+        });
+    </script>
+</body>
+</html>
